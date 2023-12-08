@@ -15,7 +15,7 @@ public class DiceTest {
     @Test
     public void testGetSides() {
         Dice twelveSidedDie = new Dice(12, "Green");
-        assertEquals(15, twelveSidedDie.getSides());
+        assertEquals(12, twelveSidedDie.getSides());
     }
 
     @Test
