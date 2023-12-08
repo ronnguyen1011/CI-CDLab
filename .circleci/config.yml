@@ -1,7 +1,6 @@
 version: 2.1
-
 orbs:
-  codecov: codecov/codecov@3.2.3
+  codecov: codecov/codecov@3.2.5
 
 jobs:
   build-and-test:
@@ -15,8 +14,8 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - codecov/upload
 workflows:
   sample:
     jobs:
-      - build-and-test
+      - checkout
+      - codecov/upload
