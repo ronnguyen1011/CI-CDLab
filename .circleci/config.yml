@@ -1,5 +1,4 @@
 version: '2.1'
-
 jobs:
   build-and-test:
     docker:
@@ -12,14 +11,10 @@ jobs:
       - run:
           name: Test
           command: mvn test
-
+orbs:
+  codecov: codecov/codecov@3.2.5
 workflows:
   upload-to-codecov:
     jobs:
-      - build-and-test
-      - codecov/upload:
-          requires:
-            - build-and-test
-
-orbs:
-  codecov: codecov/codecov@3.2.5
+      - checkout
+      - codecov/upload
