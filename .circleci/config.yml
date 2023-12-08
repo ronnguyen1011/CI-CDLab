@@ -13,10 +13,8 @@ jobs:
           command: mvn test
 orbs:
   codecov: codecov/codecov@3.2.5
-  node: circleci/node@4.7.0
 workflows:
   upload-to-codecov:
     jobs:
-      - node/test:
-          post-steps:
-            - codecov/upload
+      - checkout
+      - codecov/upload
