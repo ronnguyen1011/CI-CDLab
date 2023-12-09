@@ -1,4 +1,8 @@
-version: '2.1'
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@3.2.3
+
 jobs:
   build-and-test:
     docker:
@@ -11,8 +15,4 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - codecov/upload:
-          token: ${{ secrets.CODECOV_TOKEN }}
-
-orbs:
-  codecov: codecov/codecov@3.2.5
+      - codecov/upload
