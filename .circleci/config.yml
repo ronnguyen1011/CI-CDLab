@@ -14,8 +14,10 @@ jobs:
 
 orbs:
   codecov: codecov/codecov@3.2.5
+  node: circleci/node@4.7.0
 workflows:
   upload-to-codecov:
     jobs:
-      - checkout
-      - codecov/upload
+      - node/test:
+          post-steps:
+            - codecov/upload
