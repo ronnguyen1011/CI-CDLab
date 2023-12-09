@@ -38,3 +38,5 @@ jobs:
       uses: codecov/codecov-action@v3
       env:
         CODECOV_TOKEN: "a922317b-2ff3-42f8-96ea-d7fdabd58dde"
+        files: ./path/to/your/coverage.xml
+        flags: -f path/to/included/file.xml
