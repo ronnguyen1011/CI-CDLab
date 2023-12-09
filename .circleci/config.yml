@@ -11,6 +11,7 @@ jobs:
       - run:
           name: Test
           command: mvn test
+
 orbs:
   codecov: codecov/codecov@3.2.5
 workflows:
