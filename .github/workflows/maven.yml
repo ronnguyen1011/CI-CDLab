@@ -37,5 +37,5 @@ jobs:
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+        token: "a922317b-2ff3-42f8-96ea-d7fdabd58dde"
         files: ./target/site/jacoco/jacoco.xml
