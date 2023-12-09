@@ -11,13 +11,9 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - codecov/upload: # Use the codecov/upload job directly within the same job
+          token: ${{ secrets.CODECOV_TOKEN }}
 
 orbs:
   codecov: codecov/codecov@3.2.5
   node: circleci/node@4.7.0
-workflows:
-  upload-to-codecov:
-    jobs:
-      - node/test:
-          post-steps:
-            - codecov/upload
